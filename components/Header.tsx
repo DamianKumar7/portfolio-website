@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { EASE } from '@/components/Reveal'
+import { RESUME_URL } from '@/lib/site'
 
 const navItems = [
   { label: 'about', href: '#about' },
@@ -58,7 +59,7 @@ const Header = () => {
               </a>
             ))}
             <a
-              href="/resume.pdf"
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group ml-1 inline-flex items-center gap-2 rounded-full bg-primary pl-4 pr-1.5 py-1.5 text-xs font-medium text-primary-foreground transition-transform duration-500 ease-fluid active:scale-[0.97]"
@@ -118,7 +119,7 @@ const Header = () => {
               </motion.a>
             ))}
             <motion.a
-              href="/resume.pdf"
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}

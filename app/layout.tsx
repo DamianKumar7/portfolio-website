@@ -17,7 +17,7 @@ const mono = JetBrains_Mono({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://damiankumar7.github.io'),
+  metadataBase: new URL('https://damiankumar7.github.io/portfolio-website/'),
   title: 'Mainak Kumar — Senior Software Engineer',
   description:
     'Senior Software Engineer specializing in Java, Spring Boot, and distributed systems. Ex-PineLabs, Thoughtworks; currently at UKG. Building scalable backend and AI-driven systems.',

@@ -1,16 +1,15 @@
 import type { NextConfig } from "next";
+import { BASE_PATH } from "./lib/site";
 
 /**
  * Static export config for GitHub Pages.
  *
- * This site is built to be served at the ROOT of a GitHub *user* site
- * (repo named `<username>.github.io`, e.g. `DamianKumar7.github.io`),
- * so no basePath/assetPrefix is needed.
+ * Deployed to the PROJECT repo `github.com/DamianKumar7/portfolio-website`,
+ * so the site is served under `/portfolio-website`, not at the domain root.
+ * basePath/assetPrefix below make every route and asset URL account for that.
  *
- * If you instead deploy to a PROJECT repo (e.g. `github.com/DamianKumar7/portfolio`),
- * the site is served under `/<repo>`. In that case, uncomment and set:
- *   basePath: "/portfolio",
- *   assetPrefix: "/portfolio/",
+ * If this ever moves to a GitHub *user* site (repo renamed to
+ * `DamianKumar7.github.io`, served at the root), remove both lines below.
  */
 const nextConfig: NextConfig = {
   output: "export", // emit a fully static site into ./out
@@ -18,8 +17,8 @@ const nextConfig: NextConfig = {
     unoptimized: true, // GitHub Pages has no Next.js image optimizer
   },
   trailingSlash: true, // emit /about/index.html style paths (safer on static hosts)
-  // basePath: "/portfolio",
-  // assetPrefix: "/portfolio/",
+  basePath: BASE_PATH,
+  assetPrefix: `${BASE_PATH}/`,
 };
 
 export default nextConfig;

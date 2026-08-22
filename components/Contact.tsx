@@ -4,6 +4,7 @@ import { Mail, Github, Linkedin, MapPin } from 'lucide-react'
 import SectionHeading from '@/components/SectionHeading'
 import Reveal from '@/components/Reveal'
 import BezelCard from '@/components/BezelCard'
+import { RESUME_URL } from '@/lib/site'
 
 const links = [
   { icon: Mail, label: 'Email', value: 'damiankumar2000@gmail.com', href: 'mailto:damiankumar2000@gmail.com' },
@@ -73,7 +74,7 @@ const Contact = () => {
               </span>
             </a>
             <a
-              href="/resume.pdf"
+              href={RESUME_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-full pl-6 pr-1.5 py-1.5 text-sm font-medium text-foreground ring-1 ring-white/10 hover:ring-primary/30 transition duration-500 ease-fluid active:scale-[0.98]"
