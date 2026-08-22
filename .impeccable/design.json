@@ -1,0 +1,151 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-22T00:00:00Z",
+  "title": "Design System: Mainak Kumar Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "warm-gold": {
+        "role": "primary",
+        "displayName": "Warm Gold",
+        "canonical": "hsl(43 96% 56%)",
+        "tonalRamp": ["#2a1f05", "#4d3a08", "#7a5c0d", "#a87e12", "#d19d18", "#FBBE23", "#fcd05e", "#fee2a0"]
+      },
+      "terminal-green": {
+        "role": "secondary",
+        "displayName": "Terminal Green",
+        "canonical": "hsl(145 62% 58%)",
+        "tonalRamp": ["#0a2416", "#0f3d24", "#176038", "#1f8a50", "#2fb56b", "#52D689", "#86e4ac", "#bcf1d2"]
+      },
+      "ink-black": {
+        "role": "neutral",
+        "displayName": "Ink Black",
+        "canonical": "hsl(240 10% 3%)",
+        "tonalRamp": ["#070708", "#131316", "#1f1f24", "#2e2e35", "#4a4a53", "#6f6f79", "#a9a59d", "#f3efe7"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "hsl(240 8% 6%)",
+        "tonalRamp": ["#0e0e10", "#17171a", "#212125", "#2d2d33", "#474751", "#6e6e78", "#a7a7b0", "#e9e9ec"]
+      },
+      "foreground": {
+        "role": "neutral",
+        "displayName": "Foreground (Warm White)",
+        "canonical": "hsl(40 24% 94%)",
+        "tonalRamp": ["#1a1813", "#2f2b22", "#4b4537", "#6f6653", "#948a72", "#bcb3a0", "#dcd6c9", "#F3EFE7"]
+      },
+      "muted-foreground": {
+        "role": "neutral",
+        "displayName": "Muted Foreground",
+        "canonical": "hsl(40 8% 64%)",
+        "tonalRamp": ["#1c1b18", "#302e2a", "#4a473f", "#6b675d", "#8b8479", "#A9A59D", "#c7c3bb", "#e6e3dc"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero name inside the terminal; one per page." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles, preceded by a mono #." },
+      "title": { "displayName": "Title", "purpose": "Card and role headings." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy; JetBrains Mono, measure <= 70ch." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Uppercase 0.2em mono micro-labels." },
+      "mono": { "displayName": "Mono / Meta", "purpose": "Prompts, periods, chips, terminal chrome." }
+    },
+    "shadows": [
+      { "name": "ambient-card", "value": "inset 0 1px 1px rgba(255,255,255,0.08), 0 20px 40px -24px rgba(0,0,0,0.8)", "purpose": "Default soft float for every glass panel." },
+      { "name": "nav-float", "value": "0 8px 40px -12px rgba(0,0,0,0.7)", "purpose": "Detached navigation pill hovering over content." },
+      { "name": "hover-lift", "value": "inset 0 0 0 1px rgba(251,190,35,0.28)", "purpose": "Gold hairline on interactive cards; paired with translateY(-4px)." }
+    ],
+    "motion": [
+      { "name": "ease-fluid", "value": "cubic-bezier(0.32, 0.72, 0, 1)", "purpose": "Weighted default easing for every state transition and reveal." },
+      { "name": "duration-hover", "value": "500ms", "purpose": "Hover/press state changes." },
+      { "name": "duration-reveal", "value": "800ms", "purpose": "Scroll blur-up entrance." },
+      { "name": "blink", "value": "1.1s step-end infinite", "purpose": "Terminal cursor blink." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Gold pill with a nested button-in-button icon circle; the hero and section primary CTA.",
+      "html": "<a href=\"#\" class=\"ds-btn-primary\">View My Work<span class=\"ds-btn-primary__icon\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14\"/><path d=\"m13 6 6 6-6 6\"/></svg></span></a>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; gap:8px; background:#FBBE23; color:#09090B; font-family:'JetBrains Mono',monospace; font-size:0.875rem; font-weight:500; padding:6px 6px 6px 24px; border-radius:9999px; text-decoration:none; transition:transform 500ms cubic-bezier(0.32,0.72,0,1); } .ds-btn-primary__icon { display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:9999px; background:rgba(0,0,0,0.15); transition:transform 500ms cubic-bezier(0.32,0.72,0,1); } .ds-btn-primary:hover .ds-btn-primary__icon { transform:translate(2px,-1px) scale(1.05); } .ds-btn-primary:active { transform:scale(0.98); } .ds-btn-primary:focus-visible { outline:2px solid #FBBE23; outline-offset:2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Ghost pill with a translucent hairline that warms to gold on hover.",
+      "html": "<a href=\"#\" class=\"ds-btn-secondary\">Get in Touch<span class=\"ds-btn-secondary__icon\"><svg width=\"14\" height=\"14\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"m22 7-10 5L2 7\"/></svg></span></a>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#F3EFE7; font-family:'JetBrains Mono',monospace; font-size:0.875rem; font-weight:500; padding:6px 6px 6px 24px; border-radius:9999px; text-decoration:none; box-shadow:inset 0 0 0 1px rgba(255,255,255,0.10); transition:box-shadow 500ms cubic-bezier(0.32,0.72,0,1), transform 500ms cubic-bezier(0.32,0.72,0,1); } .ds-btn-secondary__icon { display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:9999px; background:rgba(255,255,255,0.05); color:#FBBE23; transition:transform 500ms cubic-bezier(0.32,0.72,0,1); } .ds-btn-secondary:hover { box-shadow:inset 0 0 0 1px rgba(251,190,35,0.30); } .ds-btn-secondary:hover .ds-btn-secondary__icon { transform:translate(2px,-1px); } .ds-btn-secondary:active { transform:scale(0.98); } .ds-btn-secondary:focus-visible { outline:2px solid #FBBE23; outline-offset:2px; }"
+    },
+    {
+      "name": "Bezel Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Glass panel floating on ambient shadow: translucent outer shell around a Surface inner core with a top inset highlight.",
+      "html": "<div class=\"ds-bezel\"><div class=\"ds-bezel__inner\"><h3 class=\"ds-bezel__title\">High-Throughput URL Shortener</h3><p class=\"ds-bezel__body\">Base62 short codes with Redis caching for sub-5ms redirects and an 80% DB-load reduction under concurrency.</p><div class=\"ds-bezel__chips\"><span class=\"ds-chip\">Java</span><span class=\"ds-chip\">Spring Boot</span><span class=\"ds-chip\">Redis</span></div></div></div>",
+      "css": ".ds-bezel { border-radius:28px; background:rgba(255,255,255,0.03); box-shadow:inset 0 0 0 1px rgba(255,255,255,0.08); padding:6px; transition:transform 700ms cubic-bezier(0.32,0.72,0,1), box-shadow 700ms cubic-bezier(0.32,0.72,0,1); } .ds-bezel:hover { transform:translateY(-4px); box-shadow:inset 0 0 0 1px rgba(251,190,35,0.28); } .ds-bezel__inner { border-radius:22px; background:rgba(14,14,16,0.9); box-shadow:inset 0 1px 1px rgba(255,255,255,0.08), 0 20px 40px -24px rgba(0,0,0,0.8); padding:24px; } .ds-bezel__title { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.125rem; letter-spacing:-0.01em; color:#F3EFE7; margin:0 0 12px; } .ds-bezel__body { font-family:'JetBrains Mono',monospace; font-size:0.875rem; line-height:1.6; color:#A9A59D; margin:0 0 20px; } .ds-bezel__chips { display:flex; flex-wrap:wrap; gap:6px; } .ds-chip { border-radius:9999px; background:rgba(251,190,35,0.07); color:#FBBE23; font-family:'JetBrains Mono',monospace; font-size:0.75rem; padding:4px 10px; }"
+    },
+    {
+      "name": "Eyebrow Tag",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "The section eyebrow: a small gold-tinted pill carrying the cd ~/section label in uppercase mono.",
+      "html": "<span class=\"ds-eyebrow\">cd&nbsp;~/projects</span>",
+      "css": ".ds-eyebrow { display:inline-flex; align-items:center; gap:6px; border-radius:9999px; padding:4px 11px; font-family:'JetBrains Mono',monospace; font-size:0.625rem; text-transform:uppercase; letter-spacing:0.2em; font-weight:500; color:#FBBE23; background:rgba(251,190,35,0.08); box-shadow:inset 0 0 0 1px rgba(251,190,35,0.20); }"
+    },
+    {
+      "name": "Navigation Pill",
+      "kind": "nav",
+      "refersTo": "nav-pill",
+      "description": "Floating glass navigation pill detached from the top with a mono command-path brand.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__brand\" href=\"#\"><span style=\"color:#52D689\">~</span><span style=\"color:#A9A59D\">/</span><span style=\"color:#FBBE23\">mainak</span></a><a class=\"ds-nav__link\" href=\"#\"><span style=\"color:rgba(251,190,35,0.5)\">./</span>about</a><a class=\"ds-nav__link\" href=\"#\"><span style=\"color:rgba(251,190,35,0.5)\">./</span>projects</a></nav>",
+      "css": ".ds-nav { display:inline-flex; align-items:center; gap:4px; background:rgba(7,7,8,0.6); backdrop-filter:blur(16px); padding:6px 8px; border-radius:9999px; box-shadow:0 8px 40px -12px rgba(0,0,0,0.7), inset 0 0 0 1px rgba(255,255,255,0.10); } .ds-nav__brand { padding:6px 12px; font-family:'JetBrains Mono',monospace; font-size:0.875rem; font-weight:700; text-decoration:none; border-radius:9999px; } .ds-nav__link { padding:6px 12px; font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#A9A59D; text-decoration:none; border-radius:9999px; transition:color 500ms cubic-bezier(0.32,0.72,0,1), background 500ms cubic-bezier(0.32,0.72,0,1); } .ds-nav__link:hover { color:#F3EFE7; background:rgba(255,255,255,0.05); }"
+    },
+    {
+      "name": "Terminal Window",
+      "kind": "custom",
+      "refersTo": "card",
+      "description": "Signature hero: a terminal rendered as a bezel card with traffic-light dots, green prompts, and a blinking gold cursor.",
+      "html": "<div class=\"ds-term\"><div class=\"ds-term__bar\"><span class=\"ds-term__dot\" style=\"background:rgba(222,59,59,0.7)\"></span><span class=\"ds-term__dot\" style=\"background:rgba(251,190,35,0.7)\"></span><span class=\"ds-term__dot\" style=\"background:rgba(82,214,137,0.7)\"></span><span class=\"ds-term__path\">mainak@portfolio:&nbsp;~</span></div><div class=\"ds-term__body\"><p class=\"ds-term__line\"><span class=\"ds-term__p\">$</span>whoami</p><h1 class=\"ds-term__name\">Mainak Kumar</h1><p class=\"ds-term__line\"><span class=\"ds-term__p\">$</span>cat role.txt</p><p class=\"ds-term__role\">Senior Software Engineer<span class=\"ds-term__cursor\">&#9612;</span></p></div></div>",
+      "css": ".ds-term { border-radius:22px; background:rgba(14,14,16,0.9); box-shadow:inset 0 1px 1px rgba(255,255,255,0.08), 0 20px 40px -24px rgba(0,0,0,0.8); overflow:hidden; font-family:'JetBrains Mono',monospace; } .ds-term__bar { display:flex; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid rgba(255,255,255,0.05); } .ds-term__dot { width:10px; height:10px; border-radius:9999px; } .ds-term__path { margin-left:8px; font-size:0.75rem; color:rgba(169,165,157,0.8); } .ds-term__body { padding:28px; } .ds-term__line { color:rgba(169,165,157,0.8); font-size:0.9375rem; margin:0; } .ds-term__p { color:#52D689; margin-right:8px; font-weight:500; } .ds-term__name { font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:2.25rem; color:#F3EFE7; letter-spacing:-0.02em; margin:4px 0 20px; } .ds-term__role { font-family:'Space Grotesk',sans-serif; font-weight:500; font-size:1.25rem; color:#FBBE23; margin:4px 0 0; } .ds-term__cursor { color:#FBBE23; margin-left:2px; animation:ds-blink 1.1s step-end infinite; } @keyframes ds-blink { 0%,100%{opacity:1} 50%{opacity:0} }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Research Terminal",
+    "overview": "This is an engineer's console reimagined as an editorial object. It borrows the vocabulary of a developer's terminal — a command prompt, a monospaced voice, a blinking cursor, a contribution graph — but treats that vocabulary with the calm, considered restraint of a print magazine rather than the loud theatrics of a 'hacker' aesthetic. The result reads as the personal workstation of someone senior: precise, warm, and quietly confident. Warm Gold glows against Ink Black the way a good amber terminal once glowed against a dark room; everything else recedes so the content carries the page. Depth is soft ambient float: cards are glass panels resting a few millimetres above the surface, held up by a wide, diffuse shadow and a single hairline of light along their top edge. Motion has real mass. Components lean warm and editorial: generous padding, balanced headlines, comfortable reading measures, and pill-shaped controls. The system rejects both the generic purple/blue SaaS gradient template and the neon matrix-rain hacker cliché; editorial calm is the tie-breaker in every decision.",
+    "keyCharacteristics": [
+      "Warm Gold as the single accent on Ink Black — rare, deliberate, luminous.",
+      "A two-voice type system: Space Grotesk for human headlines, JetBrains Mono for the machine.",
+      "Soft ambient float: glass panels, diffuse shadows, a hairline of top-light — never hard chrome.",
+      "Terminal grammar (prompts, cd ~/section eyebrows, cursor) used with editorial restraint.",
+      "Weighted, fluid motion; every claim anchored to a real number."
+    ],
+    "rules": [
+      { "name": "The One-Gold Rule", "body": "Warm Gold is the only accent and appears on <=10% of any viewport. If a screen looks gold-heavy, demote something to Foreground or Muted. Terminal Green is not a second accent — it is a status colour with a narrow, literal job.", "section": "colors" },
+      { "name": "The Warm-White Rule", "body": "Text is never pure #FFFFFF and the ground is never pure #000000. Both carry a trace of warmth so the page feels lit, not printed.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Space Grotesk speaks for the human (headlines, prose); JetBrains Mono speaks for the machine (prompts, labels, metadata, code, chips). Never swap the roles — the tension between the two voices is the identity.", "section": "typography" },
+      { "name": "The Floating Glass Rule", "body": "Panels float on diffuse ambient shadow and a hairline of top-light — never on a hard rgba(0,0,0,0.3) drop-shadow and never on a solid grey border. If a surface needs to feel closer, raise it and warm its hairline to gold; don't darken the shadow.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep Warm Gold to <=10% of any viewport — CTAs, active nav, key metrics, prompts, hairlines. Its rarity is the point (The One-Gold Rule).",
+      "Do split the two type voices cleanly: Space Grotesk for headlines/prose, JetBrains Mono for prompts/labels/metadata (The Two-Voice Rule).",
+      "Do float panels on the Ambient-card shadow with a 1px top inset highlight; warm the hairline to gold on hover (The Floating Glass Rule).",
+      "Do lead every section with a cd ~/section eyebrow tag and a mono # before the headline.",
+      "Do back every impact claim with a specific number pulled from the real profile.",
+      "Do animate with ease-fluid (cubic-bezier(0.32, 0.72, 0, 1)) over 500-900ms, transforming only transform/opacity, and honour prefers-reduced-motion.",
+      "Do keep text warm-white (#F3EFE7) on ink-black (#070708) — never pure white on pure black (The Warm-White Rule)."
+    ],
+    "donts": [
+      "Don't introduce a third accent hue or use Terminal Green as general emphasis — it is a status colour only.",
+      "Don't use purple/blue SaaS gradients, symmetric three-column template grids, or matrix-rain / neon hacker motifs.",
+      "Don't use hard dark drop-shadows (rgba(0,0,0,0.3)) or solid grey 1px borders for depth — use ambient float and translucent hairlines.",
+      "Don't thicken icon strokes past 1.5, and never animate width, height, top, or left.",
+      "Don't let Warm Gold fill large areas; it is light, not paint."
+    ]
+  }
+}

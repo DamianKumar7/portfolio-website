@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mainak Kumar — Portfolio
 
-## Getting Started
+Personal portfolio site built with **Next.js 15**, **React 19**, **Tailwind CSS**, and
+**shadcn/ui**, deployed as a fully static export to **GitHub Pages**.
 
-First, run the development server:
+Sections: Hero · About · Experience · Projects · Skills · GitHub activity · Contact.
+
+## Local development
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Build (static export)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build    # outputs a static site into ./out
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+`next.config.ts` sets `output: "export"`, so `npm run build` produces a plain static
+site in `out/` — no Node server needed at runtime.
 
-## Learn More
+## Deploying to GitHub Pages
 
-To learn more about Next.js, take a look at the following resources:
+This is configured for a **user site served at the root** (no `basePath`).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Create/rename the GitHub repo to **`DamianKumar7.github.io`** and push this code.
+2. In the repo: **Settings → Pages → Build and deployment → Source → "GitHub Actions"**.
+3. Push to `main`/`master`. The workflow in
+   [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) builds and publishes.
+4. Site goes live at **https://damiankumar7.github.io**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> **Deploying to a project repo instead** (e.g. `github.com/DamianKumar7/portfolio`)?
+> The site is then served under `/<repo>`. Uncomment `basePath` and `assetPrefix` in
+> `next.config.ts` and set them to `/<repo>`.
 
-## Deploy on Vercel
+## Updating content
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All content lives in plain data arrays inside the section components — no CMS:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| What | File |
+|------|------|
+| Name, headline, taglines, social links | `components/Hero.tsx`, `components/Header.tsx` |
+| Bio + highlight stats | `components/About.tsx` |
+| Work history | `components/Experience.tsx` |
+| Projects | `components/Projects.tsx` |
+| Skills | `components/Skills.tsx` |
+| Contact links | `components/Contact.tsx` |
+| Résumé PDF | `public/resume.pdf` |
+| GitHub username (contribution graph) | `components/GitHubActivity.tsx` |
